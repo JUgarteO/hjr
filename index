@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>La Hacienda de Doña Juana Ross</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body,h1,h5 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.map-container {
+  width: 100%;
+  height: 400px;
+  margin: 20px 0;
+}
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(30%) contrast(110%);
+}
+.gallery-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+.gallery-img:hover {
+  transform: scale(1.02);
+}
+</style>
+</head>
+<body>
+
+<div class="bgimg w3-display-container w3-text-white">
+  <div class="w3-display-middle w3-jumbo">
+    <p>La Hacienda de<br>Doña Juana Ross</p>
+  </div>
+  <div class="w3-display-topleft w3-container w3-xlarge">
+    <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-black">Menú</button></p>
+    <p><button onclick="document.getElementById('gallery').style.display='block'" class="w3-button w3-black">Galería</button></p>
+    <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black">Contacto</button></p>
+  </div>
+  <div class="w3-display-bottomleft w3-container">
+    <p class="w3-xlarge">Lunes a Viernes 8:00-23:00 | Sábado y Domingo 9:00-00:00</p>
+    <p class="w3-large"><i class="fas fa-map-marker-alt"></i> Av. Juárez #123, Centro Histórico</p>
+    <p><i class="fas fa-phone"></i> +52 33 1234 5678</p>
+  </div>
+</div>
+
+<!-- Menu Modal -->
+<div id="menu" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black w3-display-container">
+      <span onclick="document.getElementById('menu').style.display='none'" class="w3-button w3-display-topright w3-large">×</span>
+      <h1>Nuestro Menú</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Queso fundido con chorizo <b>$12.50</b></h5>
+      <h5>Guacamole tradicional <b>$10.00</b></h5>
+      <h5>Sopes de carnitas <b>$9.50</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Platos Principales</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Mole poblano de Doña Juana <b>$18.99</b></h5>
+      <h5>Filete Ross (corte premium) <b>$28.50</b></h5>
+      <h5>Enchiladas mineras <b>$15.75</b></h5>
+      <h5>Pescado a la talla <b>$22.00</b></h5>
+    </div>
+    <div class="w3-container w3-black">
+      <h1>Postres</h1>
+    </div>
+    <div class="w3-container">
+      <h5>Volcán de chocolate <b>$9.99</b></h5>
+      <h5>Flan tradicional <b>$7.50</b></h5>
+      <h5>Pastel tres leches <b>$8.00</b></h5>
+    </div>
+  </div>
+</div>
+
+<!-- Gallery Modal -->
+<div id="gallery" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black w3-display-container">
+      <span onclick="document.getElementById('gallery').style.display='none'" class="w3-button w3-display-topright w3-large">×</span>
+      <h1>Galería de Eventos</h1>
+    </div>
+    <div class="w3-container">
+      <div class="w3-row-padding">
+        <div class="w3-half">
+          <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Boda">
+          <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Jardín">
+        </div>
+        <div class="w3-half">
+          <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Evento empresarial">
+          <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Cena">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Modal -->
+<div id="contact" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom">
+    <div class="w3-container w3-black">
+      <span onclick="document.getElementById('contact').style.display='none'" class="w3-button w3-display-topright w3-large">×</span>
+      <h1>Contacto</h1>
+    </div>
+    <div class="w3-container">
+      <p>Reserva una mesa, consulta sobre eventos o envíanos un mensaje:</p>
+      <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nombre" required name="Name"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="Número de personas" required name="People"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Fecha y hora" required name="date"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Mensaje o requerimientos especiales" required name="Message"></p>
+        <p><button class="w3-button w3-black" type="submit">ENVIAR MENSAJE</button></p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Mapa de Google -->
+<div class="w3-container w3-padding-64">
+  <h2 class="w3-center">¿Cómo llegar?</h2>
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.123456789012!2d-103.12345678901234!3d20.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDA3JzI0LjQiTiAxMDPCsDA3JzI0LjQiVw!5e0!3m2!1ses!2smx!4v1234567890123!5m2!1ses!2smx" 
+      allowfullscreen="" 
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+  <div class="w3-center w3-padding-16">
+    <a href="https://maps.app.goo.gl/XXXXX" class="w3-button w3-black" target="_blank">
+      <i class="fas fa-directions"></i> Abrir en Google Maps
+    </a>
+  </div>
+  <div class="w3-container w3-light-grey w3-padding-16 w3-center">
+    <p><i class="fas fa-map-marker-alt"></i> Av. Juárez #123, Centro Histórico</p>
+    <p><i class="fas fa-phone"></i> +52 33 1234 5678</p>
+    <p><i class="fas fa-envelope"></i> contacto@haciendajuanaross.com</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>© 2023 La Hacienda de Doña Juana Ross - Todos los derechos reservados</p>
+  <div class="w3-xlarge w3-padding-16">
+    <i class="fab fa-facebook w3-hover-opacity"></i>
+    <i class="fab fa-instagram w3-hover-opacity"></i>
+    <i class="fab fa-whatsapp w3-hover-opacity"></i>
+  </div>
+</footer>
+
+</body>
+</html>
