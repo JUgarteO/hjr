@@ -4,6 +4,7 @@
 <title>La Hacienda de Doña Juana Ross</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
@@ -36,9 +37,83 @@ body, html {height: 100%}
 .gallery-img:hover {
   transform: scale(1.02);
 }
+/* Botón de WhatsApp */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.whatsapp-btn:hover {
+  background-color: #128C7E;
+  transform: scale(1.1);
+}
+/* Popup de WhatsApp */
+.whatsapp-popup {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  padding: 15px;
+  z-index: 101;
+  display: none;
+}
+.whatsapp-popup p {
+  margin: 0 0 15px 0;
+}
+.whatsapp-popup a {
+  display: block;
+  background-color: #25D366;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.whatsapp-popup a:hover {
+  background-color: #128C7E;
+}
+.close-popup {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
 </style>
 </head>
 <body>
+
+<!-- Botón flotante de WhatsApp -->
+<div class="whatsapp-btn" id="whatsappButton">
+  <i class="fab fa-whatsapp"></i>
+</div>
+
+<!-- Popup de WhatsApp -->
+<div class="whatsapp-popup" id="whatsappPopup">
+  <span class="close-popup" onclick="closeWhatsAppPopup()">×</span>
+  <p>¡Hola! ¿En qué podemos ayudarte?</p>
+  <a href="https://wa.me/56971580830?text=Hola%20La%20Hacienda%20de%20Doña%20Juana%20Ross,%20me%20gustaría%20hacer%20una%20reservación" target="_blank">
+    <i class="fab fa-whatsapp"></i> Chatear ahora
+  </a>
+  <p style="margin-top: 10px; font-size: 14px;">O escríbenos al: +569 7158 0830</p>
+</div>
 
 <div class="bgimg w3-display-container w3-text-white">
   <div class="w3-display-middle w3-jumbo">
@@ -48,9 +123,6 @@ body, html {height: 100%}
     <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-black">Menú</button></p>
     <p><button onclick="document.getElementById('gallery').style.display='block'" class="w3-button w3-black">Galería</button></p>
     <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black">Contacto</button></p>
-  </div>
-  <div class="w3-display-bottomleft w3-container">
-
   </div>
 </div>
 
@@ -132,19 +204,20 @@ body, html {height: 100%}
 <div class="w3-container w3-padding-64">
   <h2 class="w3-center">¿Cómo llegar?</h2>
   <div class="map-container">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.123456789012!2d-103.12345678901234!3d20.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDA3JzI0LjQiTiAxMDPCsDA3JzI0LjQiVw!5e0!3m2!1ses!2smx!4v1234567890123!5m2!1ses!2smx" 
-      allowfullscreen="" 
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.300341863395!2d-71.60721482343152!3d-33.04855887704466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689e17af163ff51%3A0xb222d1ff92db3b00!2sLa%20Hacienda%20de%20Do%C3%B1a%20Juana%20Ross!5e0!3m2!1ses-419!2scl!4v1743796107398!5m2!1ses-419!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+</iframe>
   </div>
   <div class="w3-center w3-padding-16">
     <a href="https://maps.app.goo.gl/XXXXX" class="w3-button w3-black" target="_blank">
       <i class="fas fa-directions"></i> Abrir en Google Maps
     </a>
   </div>
- </div>
+  <div class="w3-container w3-light-grey w3-padding-16 w3-center">
+    <p><i class="fas fa-map-marker-alt"></i> Juana Ross 50, Valparaíso</p>
+    <p><i class="fas fa-phone"></i> +569 7158 0830</p>
+    <p><i class="fas fa-envelope"></i> info@haciendajuanaross.cl</p>
+  </div>
+</div>
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16">
@@ -155,6 +228,41 @@ body, html {height: 100%}
     <i class="fab fa-whatsapp w3-hover-opacity"></i>
   </div>
 </footer>
+
+<script>
+// WhatsApp Popup
+const whatsappButton = document.getElementById('whatsappButton');
+const whatsappPopup = document.getElementById('whatsappPopup');
+
+whatsappButton.addEventListener('click', function() {
+  whatsappPopup.style.display = whatsappPopup.style.display === 'block' ? 'none' : 'block';
+});
+
+function closeWhatsAppPopup() {
+  whatsappPopup.style.display = 'none';
+}
+
+// Cierra el popup si se hace clic fuera de él
+window.addEventListener('click', function(event) {
+  if (event.target !== whatsappButton && !whatsappButton.contains(event.target) && 
+      event.target !== whatsappPopup && !whatsappPopup.contains(event.target)) {
+    whatsappPopup.style.display = 'none';
+  }
+});
+
+// Cierra los modales al hacer clic fuera de ellos
+window.onclick = function(event) {
+  if (event.target == document.getElementById('menu')) {
+    document.getElementById('menu').style.display = "none";
+  }
+  if (event.target == document.getElementById('gallery')) {
+    document.getElementById('gallery').style.display = "none";
+  }
+  if (event.target == document.getElementById('contact')) {
+    document.getElementById('contact').style.display = "none";
+  }
+}
+</script>
 
 </body>
 </html>
