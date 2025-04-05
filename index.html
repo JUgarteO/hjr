@@ -19,38 +19,50 @@
     
     <!-- MICRODATOS SCHEMA.ORG -->
 <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "La Hacienda de Doña Juana Ross",
+  "description": "Restaurante tradicional de comida chilena en Valparaíso, especializado en ceviches, parrilladas y platos típicos. El mejor centro de eventos",
+  "image": "https://tusitio.com/images/logo-hacienda.jpg",
+  "url": "https://tusitio.com",
+  "telephone": "+56971580830",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Juana Ross 50",
+    "addressLocality": "Valparaíso",
+    "addressRegion": "Valparaíso",
+    "postalCode": "2340000",
+    "addressCountry": "CL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-33.048558",
+    "longitude": "-71.607214"
+  },
+  "openingHoursSpecification": [
     {
-      "@context": "https://schema.org",
-      "@type": "Restaurant",
-      "name": "La Hacienda de Doña Juana Ross",
-      "image": "https://tusitio.com/logo.jpg",
-      "@id": "https://haciendajuanaross.cl",
-      "url": "https://haciendajuanaross.cl",
-      "telephone": "+56971580830",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Juana Ross 50",
-        "addressLocality": "Valparaíso",
-        "addressRegion": "Valparaíso",
-        "postalCode": "2340000",
-        "addressCountry": "CL"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "-33.048558",
-        "longitude": "-71.607214"
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-        "opens": "08:00",
-        "closes": "23:00"
-      },
-      "servesCuisine": "Comida Chilena Tradicional",
-      "priceRange": "$15000$",
-      "hasMenu": "https://tusitio.com#menu"
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "23:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday","Sunday"],
+      "opens": "09:00",
+      "closes": "00:00"
     }
-    </script>
+  ],
+  "servesCuisine": ["Comida Chilena", "Mariscos", "Parrilladas"],
+  "priceRange": "$$",
+  "menu": "https://tusitio.com#menu",
+  "sameAs": [
+    "https://www.facebook.com/haciendajuanaross",
+    "https://www.instagram.com/haciendajuanaross"
+  ]
+}
+</script>
 
 
 <!-- Hojas de estilo y fuentes -->
