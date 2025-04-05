@@ -4,19 +4,83 @@
 <title>La Hacienda de Doña Juana Ross</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- META TAGS SEO -->
+<meta name="description" content="Restaurante tradicional en Valparaíso. Disfruta de ceviches, parrilladas y comida chilena. Delivery por Rappi, Uber Eats.">
+<meta name="keywords" content="restaurante Valparaíso, comida chilena, ceviche, lomo a lo pobre, machas parmesana, delivery Valparaíso">
+<meta name="author" content="La Hacienda de Doña Juana Ross">
+    
+<!-- OPEN GRAPH / SOCIAL MEDIA TAGS -->
+    <meta property="og:title" content="La Hacienda de Doña Juana Ross | Comida Tradicional Chilena">
+    <meta property="og:description" content="El mejor restaurante de comida tradicional en Valparaíso. Prueba nuestros platos típicos y especialidades de la casa.">
+    <meta property="og:image" content="https://tusitio.com/imagen-compartir.jpg">
+    <meta property="og:url" content="https://haciendajuanaross.cl">
+    <meta property="og:type" content="restaurant">
+    
+    <!-- MICRODATOS SCHEMA.ORG -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "La Hacienda de Doña Juana Ross",
+      "image": "https://tusitio.com/logo.jpg",
+      "@id": "https://haciendajuanaross.cl",
+      "url": "https://haciendajuanaross.cl",
+      "telephone": "+56971580830",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Juana Ross 50",
+        "addressLocality": "Valparaíso",
+        "addressRegion": "Valparaíso",
+        "postalCode": "2340000",
+        "addressCountry": "CL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-33.048558",
+        "longitude": "-71.607214"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "08:00",
+        "closes": "23:00"
+      },
+      "servesCuisine": "Comida Chilena Tradicional",
+      "priceRange": "$15000$",
+      "hasMenu": "https://tusitio.com#menu"
+    }
+    </script>
+
+
+<!-- Hojas de estilo y fuentes -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
 body,h1,h5 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
+body, html {height: 100%; margin: 0; padding: 0;}
+
+/* Fondo principal con efecto parallax */
 .bgimg {
   background-image: url('https://lh3.googleusercontent.com/d/1FQslQt1uEurhLIVmEmwX44x2o6yXEoot');
-  min-height: 100%;
+  min-height: 100vh;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  position: relative;
 }
+
+/* Contenedor transparente para el mapa */
+.transparent-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4rem 2rem;
+  margin: 0;
+  width: 100%;
+}
+
 .map-container {
   width: 100%;
   height: 400px;
@@ -28,6 +92,7 @@ body, html {height: 100%}
   border: none;
   filter: grayscale(30%) contrast(110%);
 }
+
 .gallery-img {
   width: 100%;
   height: 200px;
@@ -38,6 +103,7 @@ body, html {height: 100%}
 .gallery-img:hover {
   transform: scale(1.02);
 }
+
 /* Botón de WhatsApp */
 .whatsapp-btn {
   position: fixed;
@@ -50,7 +116,7 @@ body, html {height: 100%}
   border-radius: 50%;
   text-align: center;
   font-size: 30px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.9);
   z-index: 100;
   display: flex;
   align-items: center;
@@ -61,6 +127,7 @@ body, html {height: 100%}
   background-color: #128C7E;
   transform: scale(1.1);
 }
+
 /* Popup de WhatsApp */
 .whatsapp-popup {
   position: fixed;
@@ -97,7 +164,41 @@ body, html {height: 100%}
   cursor: pointer;
   font-size: 20px;
 }
+
+/* Botones superiores */
+.menu-button {
+  background-color: rgba(0,0,0,0.7) !important;
+     transition: all 0.3s;
+}
+.menu-button:hover {
+  background-color: white !important;
+  color: black !important;
+}
+
+/* Info footer en la portada */
+.info-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.3);
+  width: 100%;
+  padding: 1rem;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bgimg {
+    background-attachment: scroll;
+  }
+  .w3-display-middle {
+    width: 100%;
+    padding: 0 1rem;
+  }
+}
 </style>
+
+
 </head>
 <body>
 
@@ -116,14 +217,19 @@ body, html {height: 100%}
   <p style="margin-top: 10px; font-size: 14px;">O escríbenos al: +569 7158 0830</p>
 </div>
 
+<!-- Portada con imagen de fondo -->
 <div class="bgimg w3-display-container w3-text-white">
   <div class="w3-display-middle w3-jumbo">
     <p>La Hacienda de<br>Doña Juana Ross</p>
   </div>
   <div class="w3-display-topleft w3-container w3-xlarge">
-    <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button w3-black">Carta</button></p>
-    <p><button onclick="document.getElementById('gallery').style.display='block'" class="w3-button w3-black">Galería</button></p>
-    <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button w3-black">Contacto</button></p>
+    <p><button onclick="document.getElementById('menu').style.display='block'" class="w3-button menu-button">Menú</button></p>
+    <p><button onclick="document.getElementById('gallery').style.display='block'" class="w3-button menu-button">Galería</button></p>
+    <p><button onclick="document.getElementById('contact').style.display='block'" class="w3-button menu-button">Contacto</button></p>
+  </div>
+  <div class="info-footer">
+    <p class="w3-large"><i class="fas fa-map-marker-alt"></i> Juana Ross 50, Valparaíso</p>
+    <p><i class="fas fa-phone"></i> +569 7158 0830</p>
   </div>
 </div>
 
@@ -135,12 +241,12 @@ body, html {height: 100%}
       <h1>Nuestro Menú</h1>
     </div>
     <div class="w3-container">
-      <h5>Ceviche de la Casa <b>$15.000 </b></h5>
-      <h5>Ceviche de Reineta <b>$10.000 </b></h5>
-      <h5>Machas a la Parmesana <b>$15.000 </b></h5>
-      <h5>Chorrillana <b>$15.000 </b></h5>
-      <h5>Loomo a lo Pobre <b>$15.000 </b></h5>
-      <h5>Suprema de Ave <b>$12.500 </b></h5>
+      <h5>Ceviche de la Casa <b>$15.000</b></h5>
+      <h5>Ceviche de Reineta <b>$10.000</b></h5>
+      <h5>Machas a la Parmesana <b>$15.000</b></h5>
+      <h5>Chorrillana <b>$15.000</b></h5>
+      <h5>Lomo a lo Pobre <b>$15.000</b></h5>
+      <h5>Suprema de Ave <b>$12.500</b></h5>
     </div>
     <div class="w3-container w3-black">
       <h1>Platos Principales</h1>
@@ -156,8 +262,8 @@ body, html {height: 100%}
     </div>
     <div class="w3-container">
       <h5>Panqueque Celestino <b>$7.500</b></h5>
-      <h5>copa de Helado <b>$6.500</b></h5>
-      <h5>copa de Fruta Estación <b>$4.500</b></h5>
+      <h5>Copa de Helado <b>$6.500</b></h5>
+      <h5>Copa de Fruta Estación <b>$4.500</b></h5>
     </div>
   </div>
 </div>
@@ -167,17 +273,17 @@ body, html {height: 100%}
   <div class="w3-modal-content w3-animate-zoom">
     <div class="w3-container w3-black w3-display-container">
       <span onclick="document.getElementById('gallery').style.display='none'" class="w3-button w3-display-topright w3-large">×</span>
-      <h1>Galería de Fotos</h1>
+      <h1>Galería de Eventos</h1>
     </div>
     <div class="w3-container">
       <div class="w3-row-padding">
         <div class="w3-half">
-          <img src="https://lh3.googleusercontent.com/d/1-_RFodlS7TQ50-bXB03gHuG74fAKDs9S?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Platos">
-          <img src="https://lh3.googleusercontent.com/d/1aSOeLajXHd9x6WGrM4KBxAGYQNHpITea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Chorrilana">
+          <img src="https://lh3.googleusercontent.com/d/1-_RFodlS7TQ50-bXB03gHuG74fAKDs9S" class="gallery-img" alt="Boda">
+          <img src="https://lh3.googleusercontent.com/d/1aSOeLajXHd9x6WGrM4KBxAGYQNHpITea" class="gallery-img" alt="Jardín">
         </div>
         <div class="w3-half">
-          <img src="https://lh3.googleusercontent.com/d/1lk5TZiioLAwV6_jFO-mCN6ms4dr4UYpG?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Ceviches">
-          <img src="https://lh3.googleusercontent.com/d/1REfhpQuNNHKI3v_2VQW0I3aFVYBRGiXH?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="gallery-img" alt="Parriladas">
+          <img src="https://lh3.googleusercontent.com/d/1lk5TZiioLAwV6_jFO-mCN6ms4dr4UYpG" class="gallery-img" alt="Evento empresarial">
+          <img src="https://lh3.googleusercontent.com/d/1REfhpQuNNHKI3v_2VQW0I3aFVYBRGiXH" class="gallery-img" alt="Cena">
         </div>
       </div>
     </div>
@@ -204,29 +310,43 @@ body, html {height: 100%}
   </div>
 </div>
 
-<!-- Mapa de Google -->
-<div class="w3-container w3-padding-64">
+<!-- Sección del Mapa con fondo transparente -->
+<div class="transparent-container">
   <h2 class="w3-center">¿Cómo llegar?</h2>
   <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.300341863395!2d-71.60721482343152!3d-33.04855887704466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689e17af163ff51%3A0xb222d1ff92db3b00!2sLa%20Hacienda%20de%20Do%C3%B1a%20Juana%20Ross!5e0!3m2!1ses-419!2scl!4v1743796107398!5m2!1ses-419!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.300341863395!2d-71.60721482343152!3d-33.04855887704466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689e17af163ff51%3A0xb222d1ff92db3b00!2sLa%20Hacienda%20de%20Do%C3%B1a%20Juana%20Ross!5e0!3m2!1ses-419!2scl!4v1743796107398!5m2!1ses-419!2scl" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
   </div>
-  <div class="w3-center w3-padding-16">
-    <a href="https://maps.app.goo.gl/qQjfYATK8a3DNMP29" class="w3-button w3-black" target="_blank">
+  <div class="w3-center w3-padding">
+    <a href="https://maps.app.goo.gl/qQjfYATK8a3DNMP29" class="w3-button w3-black w3-hover-white" target="_blank" style="border: 1px solid white;">
       <i class="fas fa-directions"></i> Abrir en Google Maps
     </a>
   </div>
-  <div class="w3-container w3-light-grey w3-padding-16 w3-center">
-    <p><i class="fas fa-map-marker-alt"></i> Juana Ross 50, Valparaíso</p>
-    <p><i class="fas fa-phone"></i> +569 7158 0830</p>
-    <p><i class="fas fa-envelope"></i> info@haciendajuanaross.cl</p>
   </div>
-</div>
 
 <!-- Footer -->
+
 <footer class="w3-center w3-black w3-padding-16">
-  <p>© 2023 La Hacienda de Doña Juana Ross - Todos los derechos reservados</p>
+ 
+
   <div class="w3-xlarge w3-padding-16">
+  
+    <!-- Servicios de delivery -->
+  
+  <!-- Iconos para delivery -->
+  <a href="https://www.ubereats.com/cl/store/la-hacienda-de-dona-juana-ross-valparaiso/eOdh76fzS4qNAHnsUOVJwQ?diningMode=DELIVERY" target="_blank" style="text-decoration: none; margin: 0 15px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Uber_Eats_icon.svg/512px-Uber_Eats_icon.svg.png" style="height: 28px; vertical-align: middle;" alt="Uber Eats" title="Pedir por Uber Eats">
+  </a>
+ 
+  <a href="https://www.rappi.cl/restaurantes/900098779-la-hacienda-de-dona-juana-ros" target="_blank" style="text-decoration: none; margin: 0 15px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Rappi_logo.svg/512px-Rappi_logo.svg.png" style="height: 28px; vertical-align: middle;" alt="Rappi" title="Pedir por Rappi">
+  </a>
+  
+<!-- Redes sociales -->
+<div class="w3-xlarge w3-padding-10">
     <a href="https://www.facebook.com/haciendajuanaross" target="_blank" style="text-decoration: none;">
       <i class="fab fa-facebook w3-hover-opacity"></i>
     </a>
@@ -236,7 +356,9 @@ body, html {height: 100%}
     <a href="https://wa.me/56971580830" target="_blank" style="text-decoration: none;">
       <i class="fab fa-whatsapp w3-hover-opacity"></i>
     </a>
+</div>
   </div>
+  <p>© 2023 La Hacienda de Doña Juana Ross - Todos los derechos reservados</p>
 </footer>
 
 <script>
@@ -252,7 +374,6 @@ function closeWhatsAppPopup() {
   whatsappPopup.style.display = 'none';
 }
 
-// Cierra el popup si se hace clic fuera de él
 window.addEventListener('click', function(event) {
   if (event.target !== whatsappButton && !whatsappButton.contains(event.target) && 
       event.target !== whatsappPopup && !whatsappPopup.contains(event.target)) {
